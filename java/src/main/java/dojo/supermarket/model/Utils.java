@@ -1,5 +1,6 @@
 package dojo.supermarket.model;
 
+import java.util.Locale;
 
 public class Utils {
 
