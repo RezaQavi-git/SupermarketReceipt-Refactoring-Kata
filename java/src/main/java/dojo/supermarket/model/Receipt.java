@@ -30,7 +30,7 @@ public class Receipt {
             result.append(receiptItem);
         }
         for (ReceiptItem item : this.items) {
-            String discountPresentation = item.getProduct()presentDiscount();
+            String discountPresentation = item.getProduct().presentDiscount();
             result.append(discountPresentation);
         }
         return result;

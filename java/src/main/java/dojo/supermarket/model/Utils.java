@@ -4,7 +4,7 @@ import java.util.Locale;
 
 public class Utils {
 
-    private final int columns;
+    private static final int columns;
 
     public Utils() {
         this(40);

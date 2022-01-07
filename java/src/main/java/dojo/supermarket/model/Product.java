@@ -5,8 +5,8 @@ import java.util.Objects;
 public class Product {
     private final String name;
     private final ProductUnit unit;
-    private final String discountDescription;
-    private final double discountAmount;
+    private String discountDescription;
+    private double discountAmount;
 
     public Product(String name, ProductUnit unit) {
         this.name = name;
@@ -35,7 +35,7 @@ public class Product {
     }
 
     public void setDiscountAmount(double _discountAmount) {
-        return discountAmount = _discountAmount;
+        this.discountAmount = _discountAmount;
     }
 
     public String presentDiscount() {
