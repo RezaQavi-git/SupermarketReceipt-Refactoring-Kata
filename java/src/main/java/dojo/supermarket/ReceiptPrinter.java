@@ -6,26 +6,9 @@ import java.util.Locale;
 
 public class ReceiptPrinter {
 
-    private final int columns;
-
-    public ReceiptPrinter() {
-        this(40);
-    }
-
-    public ReceiptPrinter(int columns) {
-        this.columns = columns;
-    }
-
     public String printReceipt(Receipt receipt) {
         StringBuilder result = new StringBuilder();
-        for (ReceiptItem item : receipt.getItems()) {
-            String receiptItem = presentReceiptItem(item);
-            result.append(receiptItem);
-        }
-        for (Discount discount : receipt.getDiscounts()) {
-            String discountPresentation = presentDiscount(discount);
-            result.append(discountPresentation);
-        }
+        result.append(receipt.presentItems());
 
         result.append("\n");
         result.append(presentTotal(receipt));

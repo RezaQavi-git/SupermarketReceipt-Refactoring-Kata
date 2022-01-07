@@ -33,4 +33,18 @@ public class Receipt {
     public List<Discount> getDiscounts() {
         return discounts;
     }
+
+
+    public StringBuilder presentItems() {
+        StringBuilder result = new StringBuilder();
+        for (ReceiptItem item : this.items) {
+            String receiptItem = item.presentReceiptItem();
+            result.append(receiptItem);
+        }
+        for (ReceiptItem item : this.items) {
+            String discountPresentation = item.presentDiscount();
+            result.append(discountPresentation);
+        }
+        return result;
+    }
 }
