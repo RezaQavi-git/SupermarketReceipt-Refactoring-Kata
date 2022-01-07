@@ -11,7 +11,7 @@ public class ReceiptPrinter {
         result.append(receipt.presentItems());
 
         result.append("\n");
-        result.append(presentTotal(receipt));
+        result.append(receipt.presentTotal());
         return result.toString();
     }
 
@@ -34,11 +34,7 @@ public class ReceiptPrinter {
         return formatLineWithWhitespace(name, value);
     }
 
-    private String presentTotal(Receipt receipt) {
-        String name = "Total: ";
-        String value = presentPrice(receipt.getTotalPrice());
-        return formatLineWithWhitespace(name, value);
-    }
+
 
     private String formatLineWithWhitespace(String name, String value) {
         StringBuilder line = new StringBuilder();

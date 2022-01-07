@@ -47,4 +47,10 @@ public class Receipt {
         }
         return result;
     }
+
+    public String presentTotal() {
+        String name = "Total: ";
+        String value = Utils.presentPrice(receipt.getTotalPrice());
+        return Utils.formatLineWithWhitespace(name, value);
+    }
 }
