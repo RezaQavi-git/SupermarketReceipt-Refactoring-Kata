@@ -5,15 +5,12 @@ import java.util.List;
 
 public class Receipt {
     private List<ReceiptItem> items = new ArrayList<>();
-    private List<Discount> discounts = new ArrayList<>();
 
     public Double getTotalPrice() {
         double total = 0.0;
         for (ReceiptItem item : this.items) {
             total += item.getTotalPrice();
-        }
-        for (Discount discount : this.discounts) {
-            total += discount.getDiscountAmount();
+            total += item.getProduct().getDiscountAmount();
         }
         return total;
     }
@@ -26,15 +23,6 @@ public class Receipt {
         return new ArrayList<>(this.items);
     }
 
-    public void addDiscount(Discount discount) {
-        this.discounts.add(discount);
-    }
-
-    public List<Discount> getDiscounts() {
-        return discounts;
-    }
-
-
     public StringBuilder presentItems() {
         StringBuilder result = new StringBuilder();
         for (ReceiptItem item : this.items) {
@@ -42,7 +30,7 @@ public class Receipt {
             result.append(receiptItem);
         }
         for (ReceiptItem item : this.items) {
-            String discountPresentation = item.presentDiscount();
+            String discountPresentation = item.getProduct()presentDiscount();
             result.append(discountPresentation);
         }
         return result;

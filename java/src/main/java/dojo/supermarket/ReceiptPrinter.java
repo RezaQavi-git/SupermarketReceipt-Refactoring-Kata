@@ -15,11 +15,4 @@ public class ReceiptPrinter {
         return result.toString();
     }
 
-    private String presentDiscount(Discount discount) {
-        String name = discount.getDescription() + "(" + discount.getProduct().getName() + ")";
-        String value = presentPrice(discount.getDiscountAmount());
-
-        return formatLineWithWhitespace(name, value);
-    }
-
 }
