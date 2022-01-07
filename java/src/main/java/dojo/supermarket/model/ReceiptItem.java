@@ -1,6 +1,7 @@
 package dojo.supermarket.model;
 
 import java.util.Objects;
+import java.util.Locale;
 
 public class ReceiptItem {
     private final Product product;

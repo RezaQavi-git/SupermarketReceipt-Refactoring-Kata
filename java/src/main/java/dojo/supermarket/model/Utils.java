@@ -14,7 +14,7 @@ public class Utils {
         this.columns = columns;
     }
 
-    public String formatLineWithWhitespace(String name, String value) {
+    public static String formatLineWithWhitespace(String name, String value) {
         StringBuilder line = new StringBuilder();
         line.append(name);
         int whitespaceSize = this.columns - name.length() - value.length();
@@ -26,7 +26,7 @@ public class Utils {
         return line.toString();
     }
 
-    public String presentPrice(double price) {
+    public static String presentPrice(double price) {
         return String.format(Locale.UK, "%.2f", price);
     }
 

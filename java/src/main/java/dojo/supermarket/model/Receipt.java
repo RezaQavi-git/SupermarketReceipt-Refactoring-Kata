@@ -50,7 +50,7 @@ public class Receipt {
 
     public String presentTotal() {
         String name = "Total: ";
-        String value = Utils.presentPrice(receipt.getTotalPrice());
+        String value = Utils.presentPrice(this.getTotalPrice());
         return Utils.formatLineWithWhitespace(name, value);
     }
 }
