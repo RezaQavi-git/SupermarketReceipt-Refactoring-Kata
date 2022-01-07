@@ -44,7 +44,7 @@ public class ReceiptItem {
         return line;
     }
 
-    private String presentQuantity(ReceiptItem item) {
+    private String presentQuantity() {
         String result = "";
         if(ProductUnit.Each == this.product.getUnit()) {
             result = String.format("%x", (int)this.quantity);
