@@ -49,7 +49,7 @@ public class Product {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         Product product = (Product) o;
-        return Objects.equals(name, product.name) && Objects.equals(discountDescription, product.discountDescription)
+        return Objects.equals(name, product.name) && Objects.equals(discountDescription, product.discountDescription) &&
         unit == product.unit && discountAmount == product.discountAmount;
     }
 
