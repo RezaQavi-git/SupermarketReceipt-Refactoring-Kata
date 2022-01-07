@@ -31,6 +31,29 @@ public class ReceiptItem {
         return totalPrice;
     }
 
+
+    public String presentReceiptItem() {
+        String totalPricePresentation = Utils.presentPrice(this.getTotalPrice());
+        String name = this.product.getName();
+
+        String line = Utils.formatLineWithWhitespace(name, totalPricePresentation);
+
+        if (this.quantity != 1) {
+            line += "  " + Utils.presentPrice(this.price) + " * " + this.presentQuantity() + "\n";
+        }
+        return line;
+    }
+
+    private String presentQuantity(ReceiptItem item) {
+        String result = "";
+        if(ProductUnit.Each == this.product.getUnit()) {
+            result = String.format("%x", (int)this.quantity);
+        } else {
+            result = String.format(Locale.UK, "%.3f", this.quantity);
+        }
+        return result;
+    }
+
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
