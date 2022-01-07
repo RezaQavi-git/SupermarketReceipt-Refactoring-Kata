@@ -5,6 +5,7 @@ import java.util.List;
 
 public class Receipt {
     private List<ReceiptItem> items = new ArrayList<>();
+    private List<Discount> discounts = new ArrayList<>();
 
     public Double getTotalPrice() {
         double total = 0.0;
@@ -40,5 +41,9 @@ public class Receipt {
         String name = "Total: ";
         String value = Utils.presentPrice(this.getTotalPrice());
         return Utils.formatLineWithWhitespace(name, value);
+    }
+
+    public List<Discount> getDiscounts() {
+        return discounts;
     }
 }

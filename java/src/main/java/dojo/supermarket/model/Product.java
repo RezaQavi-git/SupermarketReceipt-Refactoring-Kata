@@ -49,13 +49,13 @@ public class Product {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         Product product = (Product) o;
-        return Objects.equals(name, product.name) &&
-                unit == product.unit;
+        return Objects.equals(name, product.name) && Objects.equals(discountDescription, product.discountDescription)
+        unit == product.unit && discountAmount == product.discountAmount;
     }
 
     @Override
     public int hashCode() {
 
-        return Objects.hash(name, unit);
+        return Objects.hash(name, unit, discountDescription, discountAmount);
     }
 }

@@ -4,7 +4,7 @@ import java.util.Locale;
 
 public class Utils {
 
-    private static final int columns;
+    private static int columns;
 
     public Utils() {
         this(40);
@@ -17,7 +17,7 @@ public class Utils {
     public static String formatLineWithWhitespace(String name, String value) {
         StringBuilder line = new StringBuilder();
         line.append(name);
-        int whitespaceSize = this.columns - name.length() - value.length();
+        int whitespaceSize = columns - name.length() - value.length();
         for (int i = 0; i < whitespaceSize; i++) {
             line.append(" ");
         }
